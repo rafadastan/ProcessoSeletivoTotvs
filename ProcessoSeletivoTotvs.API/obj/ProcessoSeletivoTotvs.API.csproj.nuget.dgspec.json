@@ -30,7 +30,26 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\ProcessoSeletivoTotvs.Application.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\ProcessoSeletivoTotvs.Application.csproj"
+              },
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj"
+              },
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj"
+              },
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\ProcessoSeletivoTotvs.Infra.Data.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\ProcessoSeletivoTotvs.Infra.Data.csproj"
+              },
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\ProcessoSeletivoTotvs.Infra.IOC.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\ProcessoSeletivoTotvs.Infra.IOC.csproj"
+              },
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\ProcessoSeletivoTotvs.Test.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\ProcessoSeletivoTotvs.Test.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -42,6 +61,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,6 +85,430 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\ProcessoSeletivoTotvs.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\ProcessoSeletivoTotvs.Application.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Application",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\ProcessoSeletivoTotvs.Application.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Domain",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "ServiceStack.OrmLite.Sqlite": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Infra.CrossCutting",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.CrossCutting\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\ProcessoSeletivoTotvs.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\ProcessoSeletivoTotvs.Infra.Data.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Infra.Data",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\ProcessoSeletivoTotvs.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj": {
+                "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Domain\\ProcessoSeletivoTotvs.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\ProcessoSeletivoTotvs.Infra.IOC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\ProcessoSeletivoTotvs.Infra.IOC.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Infra.IOC",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\ProcessoSeletivoTotvs.Infra.IOC.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Infra.IOC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\ProcessoSeletivoTotvs.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\ProcessoSeletivoTotvs.Test.csproj",
+        "projectName": "ProcessoSeletivoTotvs.Test",
+        "projectPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\ProcessoSeletivoTotvs.Test.csproj",
+        "packagesPath": "C:\\Users\\Raphael\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Raphael\\source\\repos\\ProcessoSeletivoTotvs\\ProcessoSeletivoTotvs.Test\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Raphael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.7.1, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.3.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
