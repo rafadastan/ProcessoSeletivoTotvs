@@ -4,10 +4,10 @@ using System.Text;
 
 namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWorkEntity : IDisposable
     {
-        IUsuarioRepository UsuarioRepository { get; }
-        IPerfilRepository PerfilRepository { get; }
+        IUsuarioRepositoryEntity UsuarioRepositoryEntity { get; }
+        IPerfilRepositoryEntity PerfilRepositoryEntity { get; }
         void BeginTransaction();
         void Commit();
         void RollBack();

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
 {
-    public interface IPerfilRepository : IBaseRepository<Perfil>
+    public interface IPerfilRepositoryDapper : IBaseRepositoryDapper<Perfil>
     {
         Perfil Get(string perfil);
     }

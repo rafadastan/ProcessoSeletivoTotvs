@@ -2,25 +2,27 @@
 using ProcessoSeletivoTotvs.Domain.Contracts.Repositories;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Infra.Data.Contexts;
+using ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper;
+using ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository;
 using System.Data.SqlClient;
 using System.Linq;
 
 namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
 {
-    public class PerfilRepository : BaseRepository<Perfil>, IPerfilRepository
+    public class PerfilRepositoryDapper : BaseRepositoryDapper<Perfil>, IPerfilRepositoryDapper
     {
-        private readonly SqlContext sqlContext;
+        private DbSession _session;
 
-        public PerfilRepository(SqlContext sqlContext) : base(sqlContext)
+        public PerfilRepositoryDapper(DbSession session) : base(session.Connection.ConnectionString) 
         {
-            this.sqlContext = sqlContext;
+            _session = session;
         }
 
         public Perfil Get(string perfil)
         {
             var query = "select * from Perfil where Perfil = @Perfil order by Perfis";
 
-            using (var connection = new SqlConnection())
+            using (var connection = new SqlConnection(_session.Connection.ConnectionString))
             {
                 return connection.Query<Perfil>(query)
                     .FirstOrDefault();

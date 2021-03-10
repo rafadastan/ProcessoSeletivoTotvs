@@ -37,17 +37,17 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Mappings
                 .IsRequired();
 
             builder.Property(u => u.Created)
-                .HasColumnName("DataCriacao")
+                .HasColumnName("Created")
                 .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(u => u.Modified)
-                .HasColumnName("DataCriacao")
+                .HasColumnName("Modified")
                 .HasColumnType("date")
                 .IsRequired();
 
             builder.Property(u => u.LastLogin)
-                .HasColumnName("DataCriacao")
+                .HasColumnName("LastLogin")
                 .HasColumnType("date")
                 .IsRequired();
 

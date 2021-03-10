@@ -5,9 +5,7 @@ using System.Text;
 
 namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
 {
-    public interface IUsuarioRepository : IBaseRepository<Usuario>
+    public interface IPerfilRepositoryEntity : IBaseRepositoryEntity<Perfil>
     {
-        Usuario GetByLogin(string login);
-        Usuario GetByLoginAndPassword(string login, string password);
     }
 }

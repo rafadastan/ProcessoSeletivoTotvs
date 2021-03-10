@@ -1,12 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using ProcessoSeletivoTotvs.Application.Contracts;
 using ProcessoSeletivoTotvs.Application.Services;
 using ProcessoSeletivoTotvs.Domain.Contracts.CrossCuttings.Cryptography;
 using ProcessoSeletivoTotvs.Domain.Contracts.Repositories;
+using ProcessoSeletivoTotvs.Domain.Contracts.Repositories.UnitOfWork;
 using ProcessoSeletivoTotvs.Domain.Contracts.Services;
 using ProcessoSeletivoTotvs.Domain.Services;
 using ProcessoSeletivoTotvs.Infra.CrossCutting;
+using ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper;
 using ProcessoSeletivoTotvs.Infra.Data.Repositories;
+using ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository;
+using ProcessoSeletivoTotvs.Infra.Data.Repositories.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +21,7 @@ namespace ProcessoSeletivoTotvs.API.Authorization
 {
     public class DependencyInjectionConfiguration
     {
-        public static void AddDependencyInjection(IServiceCollection services)
+        public static void AddDependencyInjection(IServiceCollection services, IConfiguration configuration)
         {
             #region Application
 
@@ -34,9 +39,17 @@ namespace ProcessoSeletivoTotvs.API.Authorization
 
             #region InfraStructure
 
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
-            services.AddTransient<IPerfilRepository, PerfilRepository>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<DbSession>();
+
+            services.AddTransient<IUsuarioRepositoryEntity, UsuarioRepositoryEntity>();
+            services.AddTransient<IPerfilRepositoryEntity, PerfilRepositoryEntity>();
+
+
+            services.AddTransient<IUsuarioRepositoryDapper, UsuarioRepositoryDapper>();
+            services.AddTransient<IPerfilRepositoryDapper, PerfilRepositoryDapper>();
+
+            services.AddTransient<IUnitOfWorkEntity, UnitOfWorkEntity>();
+            services.AddTransient<IUnitOfWorkDapper, UnitOfWorkDapper>();
 
             #endregion
 

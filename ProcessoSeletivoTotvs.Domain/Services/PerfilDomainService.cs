@@ -1,4 +1,5 @@
 ﻿using ProcessoSeletivoTotvs.Domain.Contracts.Repositories;
+using ProcessoSeletivoTotvs.Domain.Contracts.Repositories.UnitOfWork;
 using ProcessoSeletivoTotvs.Domain.Contracts.Services;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Domain.Exceptions;
@@ -9,22 +10,24 @@ namespace ProcessoSeletivoTotvs.Domain.Services
 {
     public class PerfilDomainService : BaseDomainService<Perfil>, IPerfilDomainService
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWorkEntity _unitOfWorkEntity;
+        private readonly IUnitOfWorkDapper _unitOfWorkDapper;
 
-        public PerfilDomainService(IUnitOfWork unitOfWork) 
-            : base(unitOfWork.PerfilRepository)
+        public PerfilDomainService(IUnitOfWorkEntity unitOfWorkEntity, IUnitOfWorkDapper unitOfWorkDapper) 
+            : base(unitOfWorkEntity.PerfilRepositoryEntity, unitOfWorkDapper.PerfilRepositoryDapper)
         {
-            _unitOfWork = unitOfWork;
+            _unitOfWorkEntity = unitOfWorkEntity;
+            _unitOfWorkDapper = unitOfWorkDapper;
         }
 
         public Perfil Get(string perfil)
         {
-            return _unitOfWork.PerfilRepository.Get(perfil);
+            return _unitOfWorkDapper.PerfilRepositoryDapper.Get(perfil);
         }
 
         public override void Create(Perfil entity)
         {
-            if (_unitOfWork.PerfilRepository.Get(entity.Perfis) != null)
+            if (_unitOfWorkDapper.PerfilRepositoryDapper.Get(entity.Perfis) != null)
                 throw new PreenchaPerfil("Preencha o perfil");
 
             base.Create(entity);

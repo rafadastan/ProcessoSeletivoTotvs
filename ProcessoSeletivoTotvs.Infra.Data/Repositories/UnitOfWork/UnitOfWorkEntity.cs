@@ -4,22 +4,23 @@ using ProcessoSeletivoTotvs.Infra.Data.Contexts;
 
 namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWorkEntity : IUnitOfWorkEntity
     {
         private readonly SqlContext sqlContext;
         private IDbContextTransaction transaction;
 
-        public UnitOfWork(SqlContext sqlContext)
+        public UnitOfWorkEntity(SqlContext sqlContext)
         {
             this.sqlContext = sqlContext;
         }
 
-        public IUsuarioRepository UsuarioRepository
-            => new UsuarioRepository(sqlContext);
+        public IUsuarioRepositoryEntity UsuarioRepositoryEntity 
+            => new UsuarioRepositoryEntity(sqlContext);
 
-        public IPerfilRepository PerfilRepository
-            => new PerfilRepository(sqlContext);
+        public IPerfilRepositoryEntity PerfilRepositoryEntity 
+            => new PerfilRepositoryEntity(sqlContext);
 
+   
         public void BeginTransaction()
         {
             transaction = sqlContext.Database.BeginTransaction();

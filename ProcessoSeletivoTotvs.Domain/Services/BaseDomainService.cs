@@ -10,46 +10,49 @@ namespace ProcessoSeletivoTotvs.Domain.Services
         where TEntity : class
     {
 
-        private readonly IBaseRepository<TEntity> _baseRepository;
+        private readonly IBaseRepositoryEntity<TEntity> _baseRepositoryEntity;
+        private readonly IBaseRepositoryDapper<TEntity> _baseRepositoryDapper;
 
-        public BaseDomainService(IBaseRepository<TEntity> baseRepository)
+        public BaseDomainService(IBaseRepositoryEntity<TEntity> baseRepositoryEntity, IBaseRepositoryDapper<TEntity> baseRepositoryDapper)
         {
-            _baseRepository = baseRepository;
+            _baseRepositoryEntity = baseRepositoryEntity;
+            _baseRepositoryDapper = baseRepositoryDapper;
         }
 
         public virtual void Create(TEntity entity)
         {
-            _baseRepository.Create(entity);
+            _baseRepositoryEntity.Create(entity);
         }
 
         public virtual void Delete(TEntity entity)
         {
-            _baseRepository.Delete(entity);
+            _baseRepositoryEntity.Delete(entity);
         }
 
         public virtual List<TEntity> GetAll()
         {
-            return _baseRepository.GetAll();
+            return _baseRepositoryDapper.GetAll();
         }
 
         public virtual TEntity GetById(Guid id)
         {
-            return _baseRepository.GetById(id);
+            return _baseRepositoryDapper.GetById(id);
         }
 
         public virtual void Update(TEntity entity)
         {
-            _baseRepository.Update(entity);
+            _baseRepositoryEntity.Update(entity);
         }
 
         public virtual void Get(TEntity entity)
         {
-            _baseRepository.Get(entity);
+            _baseRepositoryDapper.Get(entity);
         }
 
         public void Dispose()
         {
-            _baseRepository.Dispose();
+            _baseRepositoryEntity.Dispose();
+            _baseRepositoryDapper.Dispose();
         }
     }
 }

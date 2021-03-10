@@ -7,15 +7,9 @@ namespace ProcessoSeletivoTotvs.API.Authorization
 {
     public class EntityFrameworkConfiguration
     {
-        public static void AddEntityFramework(IServiceCollection services)
-        {
-            services.AddDbContext<SqlContext>
-                (options => options.UseInMemoryDatabase("BDTotvs"));
-        }
-
         public static void AddPostgreSQLEntityFramework(IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("");
+            var connectionString = configuration.GetConnectionString("BDTotvs");
 
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<SqlContext>(opt=> opt.UseNpgsql(connectionString));

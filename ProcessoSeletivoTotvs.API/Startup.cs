@@ -31,13 +31,13 @@ namespace ProcessoSeletivoTotvs.API
             SwaggerConfiguration.AddSwagger(services);
 
             //configuração do EntityFramework
-            EntityFrameworkConfiguration.AddEntityFramework(services);
+            EntityFrameworkConfiguration.AddPostgreSQLEntityFramework(services, Configuration);
 
             //configuração para autenticação por JWT
             JwtConfiguration.AddJwt(services, Configuration);
 
             //configuração para injeção de dependência
-            DependencyInjectionConfiguration.AddDependencyInjection(services);
+            DependencyInjectionConfiguration.AddDependencyInjection(services, Configuration);
 
             //configuração de CORS
             CorsConfiguration.AddCors(services);

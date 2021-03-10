@@ -1,10 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace ProcessoSeletivoTotvs.Infra.Data.Contexts
 {
@@ -18,11 +15,11 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Contexts
 
             var root = configurationBuilder.Build();
             var connectionString = root.GetSection("ConnectionStrings")
-                .GetSection("BDProjeto").Value;
+                .GetSection("BDTotvs").Value;
 
             //instanciar a classe SqlContext
             var builder = new DbContextOptionsBuilder<SqlContext>();
-            builder.UseSqlServer(connectionString);
+            builder.UseNpgsql(connectionString);
 
             return new SqlContext(builder.Options);
         }
