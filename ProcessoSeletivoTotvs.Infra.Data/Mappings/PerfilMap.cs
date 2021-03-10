@@ -26,11 +26,15 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Mappings
                 .HasMaxLength(150)
                 .IsRequired();
 
+            builder.Property(f => f.IdUsuario)
+                .HasColumnName("UsuarioId")
+                .IsRequired();
+
             #region Relacionamentos
 
             builder.HasOne(f => f.Usuario) 
                 .WithMany(e => e.Perfis) 
-                .HasForeignKey(f => f.Id); 
+                .HasForeignKey(f => f.IdUsuario); 
 
             #endregion
         }

@@ -14,8 +14,7 @@ namespace ProcessoSeletivoTotvs.API.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly IUsuarioApplicationService _usuarioApplicationService;
-        
+        private readonly IUsuarioApplicationService _usuarioApplicationService;     
 
         public UsuariosController(IUsuarioApplicationService usuarioApplicationService)
         {

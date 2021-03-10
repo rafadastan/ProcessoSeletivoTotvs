@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Npgsql;
 using ProcessoSeletivoTotvs.Domain.Contracts.Repositories;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Infra.Data.Contexts;
@@ -6,6 +7,7 @@ using ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper;
 using ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 
 namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
 {
@@ -13,31 +15,31 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
     {
         private DbSession _session;
 
-        public UsuarioRepositoryDapper(DbSession session) : base(session.Connection.ConnectionString)
+        StringBuilder sql = new StringBuilder();
+
+        public UsuarioRepositoryDapper(DbSession session) : base(session)
         {
             _session = session;
         }
 
         public Usuario GetByLogin(string email)
         {
-            var query = "select * from Usuario where Email = @Email order by Email";
 
-            using (var connection = new SqlConnection(_session.Connection.ConnectionString))
-            {
-                return connection.Query<Usuario>(query)
+            //var querySQL = @"SELECT id, firstname, lastname, email, createtime FROM public.customer;";
+            var query = $"SELECT \"Email\" FROM public.\"Usuario\" where \"Email\" = '{email}';";
+
+                return _session.Connection.Query<Usuario>(query)
                     .FirstOrDefault();
-            }
+
         }
 
         public Usuario GetByLoginAndPassword(string email, string password)
         {
-            var query = "select * from Perfil where Email = @Email and Senha = @Senha order by Nome";
+            var query = $"SELECT * FROM \"Usuario\" where \"Email\" = '{email}' and \"Senha\" = '{password}';";
 
-            using (var connection = new SqlConnection(_session.Connection.ConnectionString))
-            {
-                return connection.Query<Usuario>(query)
+                return _session.Connection.Query<Usuario>(query)
                     .FirstOrDefault();
-            }
+
         }
     }
 }

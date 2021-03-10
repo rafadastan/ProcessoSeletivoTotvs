@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProcessoSeletivoTotvs.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +13,8 @@ namespace ProcessoSeletivoTotvs.Application.DTOs
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
         public DateTime LastLogin { get; set; }
+        public List<Perfil> Perfis { get; set; }
+
 
         public UsuarioDTO()
         {

@@ -52,7 +52,6 @@ namespace ProcessoSeletivoTotvs.Domain.Services
         public void Dispose()
         {
             _baseRepositoryEntity.Dispose();
-            _baseRepositoryDapper.Dispose();
         }
     }
 }

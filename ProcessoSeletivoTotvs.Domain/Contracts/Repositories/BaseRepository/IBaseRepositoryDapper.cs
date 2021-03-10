@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
 {
-    public interface IBaseRepositoryDapper<TEntity> : IDisposable
+    public interface IBaseRepositoryDapper<TEntity> 
         where TEntity : class
     {
         TEntity Get(TEntity entity);

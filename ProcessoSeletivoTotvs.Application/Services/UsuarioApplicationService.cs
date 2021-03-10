@@ -6,6 +6,7 @@ using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Domain.Enums.Perfil;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ProcessoSeletivoTotvs.Application.Services
@@ -29,7 +30,15 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Senha = model.Senha,
                 Created = DateTime.Now,
                 Modified = DateTime.Now,
-                LastLogin = DateTime.Now
+                LastLogin = DateTime.Now,
+                Perfis = new List<Perfil>
+                {
+                    new Perfil{
+                        Perfis= Perfis.Usuario.ToString(),
+                        Id = Guid.NewGuid(),
+                        IdUsuario = Guid.NewGuid()
+                    }
+                }
             };
 
             _usuarioDomainService.Create(usuario);
@@ -41,7 +50,15 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Email = usuario.Email,
                 Created = usuario.Created,
                 Modified = usuario.Modified,
-                LastLogin = usuario.LastLogin
+                LastLogin = usuario.LastLogin,
+                Perfis = new List<Perfil>
+                {
+                    new Perfil{
+                        Perfis= Perfis.Usuario.ToString(),
+                        Id = Guid.NewGuid(),
+                        IdUsuario = usuario.Id
+                    }
+                }
             };
         }     
 

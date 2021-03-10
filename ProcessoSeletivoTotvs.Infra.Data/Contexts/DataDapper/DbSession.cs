@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Npgsql;
+using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Text;
 
 namespace ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper
 {
@@ -15,7 +13,7 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper
         public DbSession()
         {
             Id = Guid.NewGuid();
-            Connection = new SqlConnection(Settings.ConnectionString);
+            Connection = new NpgsqlConnection(Settings.Configure());
             Connection.Open();
         }
 
