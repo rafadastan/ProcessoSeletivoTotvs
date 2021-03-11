@@ -10,5 +10,6 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Services
         Perfil Get(string perfil);
         void Create(Perfil entity);
         List<Perfil> GetAll();
+        Perfil GetById(Guid id);
     }
 }

@@ -2,6 +2,7 @@
 using ProcessoSeletivoTotvs.Application.DTOs;
 using ProcessoSeletivoTotvs.Application.Models.Usuarios;
 using ProcessoSeletivoTotvs.Domain.Contracts.Services;
+using ProcessoSeletivoTotvs.Domain.Contracts.User;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Domain.Enums.Perfil;
 using System;
@@ -14,14 +15,26 @@ namespace ProcessoSeletivoTotvs.Application.Services
     public class UsuarioApplicationService : IUsuarioApplicationService
     {
         private readonly IUsuarioDomainService _usuarioDomainService;
+        private readonly IPerfilDomainService _perfilDomainService;
+        private readonly IUser _user;
 
-        public UsuarioApplicationService(IUsuarioDomainService usuarioDomainService)
+
+        public UsuarioApplicationService(IUsuarioDomainService usuarioDomainService, IPerfilDomainService perfilDomainService, IUser user)
         {
             _usuarioDomainService = usuarioDomainService;
+            _perfilDomainService = perfilDomainService;
+            _user = user;
         }
 
         public UsuarioDTO Create(UsuarioCadastroModel model)
         {
+            var usuarioLogado = _usuarioDomainService.GetByLogin(_user.Name);
+
+            if (usuarioLogado != null)
+            {
+                var perfil = _perfilDomainService.GetById(usuarioLogado.Id);
+            }
+
             var usuario = new Usuario
             {
                 Id = Guid.NewGuid(),
@@ -34,7 +47,7 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Perfis = new List<Perfil>
                 {
                     new Perfil{
-                        Perfis= Perfis.Usuario.ToString(),
+                        Perfis = model.Perfis.FirstOrDefault(),
                         Id = Guid.NewGuid(),
                         IdUsuario = Guid.NewGuid()
                     }
@@ -54,9 +67,10 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Perfis = new List<Perfil>
                 {
                     new Perfil{
-                        Perfis= Perfis.Usuario.ToString(),
+                        Perfis = model.Perfis.FirstOrDefault(),
                         Id = Guid.NewGuid(),
-                        IdUsuario = usuario.Id
+                        IdUsuario = Guid.NewGuid(), 
+                        Usuario = usuario
                     }
                 }
             };
@@ -82,7 +96,9 @@ namespace ProcessoSeletivoTotvs.Application.Services
 
         public List<Usuario> GetAll()
         {
-            return _usuarioDomainService.GetAll();
+            var usuarios = _usuarioDomainService.GetAll();
+
+            return usuarios; 
         }
 
         public void Dispose()

@@ -15,7 +15,6 @@
     <ProjectReference Include="..\ProcessoSeletivoTotvs.Infra.CrossCutting\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj" />
     <ProjectReference Include="..\ProcessoSeletivoTotvs.Infra.Data\ProcessoSeletivoTotvs.Infra.Data.csproj" />
     <ProjectReference Include="..\ProcessoSeletivoTotvs.Infra.IOC\ProcessoSeletivoTotvs.Infra.IOC.csproj" />
-    <ProjectReference Include="..\ProcessoSeletivoTotvs.Test\ProcessoSeletivoTotvs.Test.csproj" />
   </ItemGroup>
 
 </Project>

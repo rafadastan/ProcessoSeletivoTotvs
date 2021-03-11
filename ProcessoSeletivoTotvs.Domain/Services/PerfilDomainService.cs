@@ -4,6 +4,7 @@ using ProcessoSeletivoTotvs.Domain.Contracts.Services;
 using ProcessoSeletivoTotvs.Domain.Contracts.User;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Domain.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,9 +35,14 @@ namespace ProcessoSeletivoTotvs.Domain.Services
             base.Create(entity);
         }
 
+        public override Perfil GetById(Guid id)
+        {
+            return base.GetById(id);
+        }
+
         public override List<Perfil> GetAll()
         {
-            return base.GetAll();
+            return _unitOfWorkDapper.PerfilRepositoryDapper.GetAllPerfil();
         }
     }
 }

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.6" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -20,11 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contexts\" />
     <Folder Include="Factories\" />
     <Folder Include="Utils\" />
     <Folder Include="Scenarios\" />
-    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProcessoSeletivoTotvs.API\ProcessoSeletivoTotvs.API.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using ProcessoSeletivoTotvs.Domain.Contracts.User;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ProcessoSeletivoTotvs.Application.Services
@@ -30,7 +31,7 @@ namespace ProcessoSeletivoTotvs.Application.Services
             var perfil = new Perfil
             {
                 Id = Guid.NewGuid(),
-                Perfis = model.Perfil,
+                Perfis = model.Perfil.ToString(),
                 IdUsuario = usuario.Id,
                 Usuario = usuario
             };

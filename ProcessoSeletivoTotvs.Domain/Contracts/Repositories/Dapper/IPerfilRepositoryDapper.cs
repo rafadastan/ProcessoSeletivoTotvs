@@ -8,5 +8,6 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
     public interface IPerfilRepositoryDapper : IBaseRepositoryDapper<Perfil>
     {
         Perfil Get(string perfil);
+        List<Perfil> GetAllPerfil();
     }
 }

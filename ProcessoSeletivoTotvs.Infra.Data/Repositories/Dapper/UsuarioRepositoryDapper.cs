@@ -5,6 +5,7 @@ using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Infra.Data.Contexts;
 using ProcessoSeletivoTotvs.Infra.Data.Contexts.DataDapper;
 using ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,14 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
         public UsuarioRepositoryDapper(DbSession session) : base(session)
         {
             _session = session;
+        }
+
+        public List<Usuario> GetAllUsuario()
+        {
+            var query = $"SELECT * FROM public.\"Usuario\" order by \"Nome\" ";
+
+            return _session.Connection.Query<Usuario>(query)
+                .ToList();
         }
 
         public Usuario GetByLogin(string email)

@@ -56,7 +56,7 @@ namespace ProcessoSeletivoTotvs.Domain.Services
 
         public override List<Usuario> GetAll()
         {
-            return base.GetAll();
+            return _unitOfWorkDapper.UsuarioRepositoryDapper.GetAllUsuario();
         }
     }
 }

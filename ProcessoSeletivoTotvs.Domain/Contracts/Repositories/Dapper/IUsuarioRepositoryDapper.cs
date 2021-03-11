@@ -9,5 +9,6 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
     {
         Usuario GetByLogin(string email);
         Usuario GetByLoginAndPassword(string email, string password);
+        List<Usuario> GetAllUsuario();
     }
 }
