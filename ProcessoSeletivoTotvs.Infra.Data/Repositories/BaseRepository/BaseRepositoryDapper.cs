@@ -21,7 +21,7 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository
 
         public List<TEntity> GetAll()
         {
-            var query = "select * from Usuario order by Nome";
+            var query = "SELECT * FROM public.\"Usuario\" order by \"Nome\" ";
 
                 return _session.Connection.Query<TEntity>(query)
                     .ToList();
@@ -29,22 +29,22 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories.BaseRepository
 
         public List<TEntity> GetAll(Func<TEntity, bool> where)
         {
-            var query = $"select * from Usuario {where} order by Nome";
+            var query = $"SELECT * FROM public.\"Usuario\" {where} order by \"Nome\"";
             
                 return _session.Connection.Query<TEntity>(query).ToList();
         }
 
         public TEntity GetById(Guid id)
         {
-            var query = "select * from Usuario where Id = @Id";
+            var query = $"SELECT * FROM public.\"Usuario\" where \"Id\" = '{id}'";
 
                 return _session.Connection.Query<TEntity>(query, new { Id = id }).FirstOrDefault();
         }
-        public TEntity Get(TEntity entity)
+        public TEntity Get(Func<TEntity, bool> where)
         {
-            var query = "select * from Usuario where Id = @Id";
+            var query = $"SELECT * FROM public.\"Usuario\" {where}";
 
-                return _session.Connection.Query<TEntity>(query, new { Id = entity }).FirstOrDefault();
+            return _session.Connection.Query<TEntity>(query).FirstOrDefault();
         }
 
     }

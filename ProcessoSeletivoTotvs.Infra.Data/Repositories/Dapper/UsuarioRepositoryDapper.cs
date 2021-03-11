@@ -26,7 +26,7 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
         {
 
             //var querySQL = @"SELECT id, firstname, lastname, email, createtime FROM public.customer;";
-            var query = $"SELECT \"Email\" FROM public.\"Usuario\" where \"Email\" = '{email}';";
+            var query = $"SELECT * FROM public.\"Usuario\" where \"Email\" = '{email}';";
 
                 return _session.Connection.Query<Usuario>(query)
                     .FirstOrDefault();

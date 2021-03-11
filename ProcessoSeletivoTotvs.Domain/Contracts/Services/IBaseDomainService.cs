@@ -10,7 +10,6 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Services
         void Create(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-
         List<TEntity> GetAll();
         TEntity GetById(Guid id);
     }

@@ -13,7 +13,8 @@ namespace ProcessoSeletivoTotvs.Domain.Services
         private readonly IBaseRepositoryEntity<TEntity> _baseRepositoryEntity;
         private readonly IBaseRepositoryDapper<TEntity> _baseRepositoryDapper;
 
-        public BaseDomainService(IBaseRepositoryEntity<TEntity> baseRepositoryEntity, IBaseRepositoryDapper<TEntity> baseRepositoryDapper)
+        public BaseDomainService(IBaseRepositoryEntity<TEntity> baseRepositoryEntity,
+            IBaseRepositoryDapper<TEntity> baseRepositoryDapper)
         {
             _baseRepositoryEntity = baseRepositoryEntity;
             _baseRepositoryDapper = baseRepositoryDapper;
@@ -44,9 +45,9 @@ namespace ProcessoSeletivoTotvs.Domain.Services
             _baseRepositoryEntity.Update(entity);
         }
 
-        public virtual void Get(TEntity entity)
+        public virtual void Get(Func<TEntity, bool> where)
         {
-            _baseRepositoryDapper.Get(entity);
+            _baseRepositoryDapper.Get(where);
         }
 
         public void Dispose()

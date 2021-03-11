@@ -18,7 +18,7 @@ namespace ProcessoSeletivoTotvs.Infra.Data.Repositories
 
         public Perfil Get(string perfil)
         {
-            var query = $"SELECT * FROM public.\"Perfil\" where \"Perfil\" = '{perfil}'";
+            var query = $"SELECT * FROM public.\"Perfil\" where \"Perfis\" = '{perfil}' ;";
 
                 return _session.Connection.Query<Perfil>(query)
                     .FirstOrDefault();

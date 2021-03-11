@@ -47,5 +47,30 @@ namespace ProcessoSeletivoTotvs.API.Controllers
                 });
             }
         }
+
+        [HttpGet]
+        [Authorize]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                var result = _perfilApplicationService.GetAll();
+
+                if (result == null || result.Count == 0)
+                    return StatusCode(204);
+
+                return StatusCode(200, result);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, new
+                {
+                    e.Message
+                });
+            }
+        }
     }
 }

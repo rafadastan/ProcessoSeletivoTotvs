@@ -7,5 +7,6 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
 {
     public interface IPerfilRepositoryEntity : IBaseRepositoryEntity<Perfil>
     {
+        void Adicionar(Perfil entity); 
     }
 }

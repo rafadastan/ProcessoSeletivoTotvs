@@ -7,7 +7,7 @@ namespace ProcessoSeletivoTotvs.Domain.Contracts.Repositories
     public interface IBaseRepositoryDapper<TEntity> 
         where TEntity : class
     {
-        TEntity Get(TEntity entity);
+        TEntity Get(Func<TEntity, bool> where);
         List<TEntity> GetAll();
         List<TEntity> GetAll(Func<TEntity, bool> where);
 

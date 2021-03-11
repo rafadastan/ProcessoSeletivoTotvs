@@ -1,6 +1,7 @@
 ﻿using ProcessoSeletivoTotvs.Domain.Contracts.Repositories;
 using ProcessoSeletivoTotvs.Domain.Contracts.Repositories.UnitOfWork;
 using ProcessoSeletivoTotvs.Domain.Contracts.Services;
+using ProcessoSeletivoTotvs.Domain.Contracts.User;
 using ProcessoSeletivoTotvs.Domain.Entities;
 using ProcessoSeletivoTotvs.Domain.Exceptions;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace ProcessoSeletivoTotvs.Domain.Services
         private readonly IUnitOfWorkEntity _unitOfWorkEntity;
         private readonly IUnitOfWorkDapper _unitOfWorkDapper;
 
-        public PerfilDomainService(IUnitOfWorkEntity unitOfWorkEntity, IUnitOfWorkDapper unitOfWorkDapper) 
+        public PerfilDomainService(IUnitOfWorkEntity unitOfWorkEntity, IUnitOfWorkDapper unitOfWorkDapper)
             : base(unitOfWorkEntity.PerfilRepositoryEntity, unitOfWorkDapper.PerfilRepositoryDapper)
         {
             _unitOfWorkEntity = unitOfWorkEntity;
