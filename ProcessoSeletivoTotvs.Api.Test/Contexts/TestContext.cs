@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
+using ProcessoSeletivoTotvs.API;
 using System.Net.Http;
 
-namespace ProcessoSeletivoTotvs.Test.Contexts
+namespace ProcessoSeletivoTotvs.Api.Test.Contexts
 {
     public class TestContext
     {

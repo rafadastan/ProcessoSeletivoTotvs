@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Domain", "03. Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. InfraStructure", "04. InfraStructure", "{D2CD2D76-3E9A-4129-B593-E5361846D1E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Domain", "ProcessoSeletivoTotvs.Domain\ProcessoSeletivoTotvs.Domain.csproj", "{6EB0B06E-BB75-4254-9AE8-71B595B3CA54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.Domain", "ProcessoSeletivoTotvs.Domain\ProcessoSeletivoTotvs.Domain.csproj", "{6EB0B06E-BB75-4254-9AE8-71B595B3CA54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Infra.Data", "01. Infra.Data", "{28582F8F-F8B6-4344-A896-A2D2AD8BF1E8}"
 EndProject
@@ -19,19 +19,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. CrossCutting", "02. Cro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. IOC", "03. IOC", "{3E81C332-ED2C-4487-9D99-E42FDD6EB069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Infra.Data", "ProcessoSeletivoTotvs.Infra.Data\ProcessoSeletivoTotvs.Infra.Data.csproj", "{76EC63B0-8FEF-4892-8EC3-49A8933A5CD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.Infra.Data", "ProcessoSeletivoTotvs.Infra.Data\ProcessoSeletivoTotvs.Infra.Data.csproj", "{76EC63B0-8FEF-4892-8EC3-49A8933A5CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Infra.CrossCutting", "ProcessoSeletivoTotvs.Infra.CrossCutting\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj", "{46708239-64F3-4641-BC02-871C81589652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.Infra.CrossCutting", "ProcessoSeletivoTotvs.Infra.CrossCutting\ProcessoSeletivoTotvs.Infra.CrossCutting.csproj", "{46708239-64F3-4641-BC02-871C81589652}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Infra.IOC", "ProcessoSeletivoTotvs.Infra.IOC\ProcessoSeletivoTotvs.Infra.IOC.csproj", "{C61D2708-923A-400A-86FC-718445EBD859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.Infra.IOC", "ProcessoSeletivoTotvs.Infra.IOC\ProcessoSeletivoTotvs.Infra.IOC.csproj", "{C61D2708-923A-400A-86FC-718445EBD859}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Test", "05. Test", "{FFD5D0E5-3EF2-4E71-814E-FC717F26905B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Application", "ProcessoSeletivoTotvs.Application\ProcessoSeletivoTotvs.Application.csproj", "{8A6FE0E1-A74F-46A5-AAB1-027E5CF20A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.Application", "ProcessoSeletivoTotvs.Application\ProcessoSeletivoTotvs.Application.csproj", "{8A6FE0E1-A74F-46A5-AAB1-027E5CF20A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.API", "ProcessoSeletivoTotvs.API\ProcessoSeletivoTotvs.API.csproj", "{2F4ABD8D-3327-4849-B950-E2143ABFB664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessoSeletivoTotvs.API", "ProcessoSeletivoTotvs.API\ProcessoSeletivoTotvs.API.csproj", "{2F4ABD8D-3327-4849-B950-E2143ABFB664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Test", "ProcessoSeletivoTotvs.Test\ProcessoSeletivoTotvs.Test.csproj", "{88D153C9-6889-4572-91DC-E4A75A3F7A85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoTotvs.Api.Test", "ProcessoSeletivoTotvs.Api.Test\ProcessoSeletivoTotvs.Api.Test.csproj", "{D663BC29-BD51-4E55-9813-DF818CE3D871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +63,10 @@ Global
 		{2F4ABD8D-3327-4849-B950-E2143ABFB664}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F4ABD8D-3327-4849-B950-E2143ABFB664}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F4ABD8D-3327-4849-B950-E2143ABFB664}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88D153C9-6889-4572-91DC-E4A75A3F7A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88D153C9-6889-4572-91DC-E4A75A3F7A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88D153C9-6889-4572-91DC-E4A75A3F7A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88D153C9-6889-4572-91DC-E4A75A3F7A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D663BC29-BD51-4E55-9813-DF818CE3D871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D663BC29-BD51-4E55-9813-DF818CE3D871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D663BC29-BD51-4E55-9813-DF818CE3D871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D663BC29-BD51-4E55-9813-DF818CE3D871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,7 +81,7 @@ Global
 		{C61D2708-923A-400A-86FC-718445EBD859} = {3E81C332-ED2C-4487-9D99-E42FDD6EB069}
 		{8A6FE0E1-A74F-46A5-AAB1-027E5CF20A4F} = {CFDEF29C-5F62-428F-8489-D0A802FA42CC}
 		{2F4ABD8D-3327-4849-B950-E2143ABFB664} = {CE50666D-364C-4637-B29B-C295866B43E5}
-		{88D153C9-6889-4572-91DC-E4A75A3F7A85} = {FFD5D0E5-3EF2-4E71-814E-FC717F26905B}
+		{D663BC29-BD51-4E55-9813-DF818CE3D871} = {FFD5D0E5-3EF2-4E71-814E-FC717F26905B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B667A1EB-2B7A-49BC-9F8B-2282ECCCA31F}
