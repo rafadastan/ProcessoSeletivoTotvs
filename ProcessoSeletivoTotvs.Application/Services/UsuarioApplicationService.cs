@@ -47,7 +47,7 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Perfis = new List<Perfil>
                 {
                     new Perfil{
-                        Perfis = model.Perfis.FirstOrDefault(),
+                        Perfis = Perfis.Administrador.ToString(),
                         Id = Guid.NewGuid(),
                         IdUsuario = Guid.NewGuid()
                     }
@@ -63,16 +63,7 @@ namespace ProcessoSeletivoTotvs.Application.Services
                 Email = usuario.Email,
                 Created = usuario.Created,
                 Modified = usuario.Modified,
-                LastLogin = usuario.LastLogin,
-                Perfis = new List<Perfil>
-                {
-                    new Perfil{
-                        Perfis = model.Perfis.FirstOrDefault(),
-                        Id = Guid.NewGuid(),
-                        IdUsuario = Guid.NewGuid(), 
-                        Usuario = usuario
-                    }
-                }
+                LastLogin = usuario.LastLogin
             };
         }     
 

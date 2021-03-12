@@ -24,6 +24,9 @@ namespace ProcessoSeletivoTotvs.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
         public IActionResult Post(UsuarioAcessoModel model)
         {
             try

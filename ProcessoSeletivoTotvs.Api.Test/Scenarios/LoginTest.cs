@@ -2,11 +2,7 @@
 using ProcessoSeletivoTotvs.Api.Test.Contexts;
 using ProcessoSeletivoTotvs.Api.Test.Factories;
 using ProcessoSeletivoTotvs.Api.Test.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -23,38 +19,12 @@ namespace ProcessoSeletivoTotvs.Api.Test.Scenarios
         {
             testContext = new TestContext();
 
-            endpointUsuario = "/api/Usuario";
+            endpointUsuario = "/api/Usuarios";
             endpointLogin = "/api/Login";
 
             errorAccessDenied = "Usuário não foi encontrado.";
         }
 
-        [Fact]
-        public async Task Login_Post_ReturnsOk()
-        {
-            #region Passo 1 -  Criar uma conta de usuário
-
-            var usuario = UsuarioFactory.CreateUsuario;
-
-            var requestCreate = ServicesUtil.CreateRequestContent(usuario);
-            var responseCreate = await testContext.Client.PostAsync(endpointUsuario, requestCreate);
-
-            responseCreate.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            #endregion
-
-            #region Passo 2 - Autenticar o usuário
-
-            var auth = LoginFactory.CreateAuth(usuario.Email, usuario.Senha);
-
-            var requestLogin = ServicesUtil.CreateRequestContent(auth);
-            var responseLogin = await testContext.Client.PostAsync(endpointLogin, requestLogin);
-
-            responseLogin.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            #endregion
-
-        }
 
         [Fact]
         public async Task Login_Post_ReturnsBadRequest()
@@ -65,20 +35,6 @@ namespace ProcessoSeletivoTotvs.Api.Test.Scenarios
             var response = await testContext.Client.PostAsync(endpointLogin, request);
 
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-        }
-
-        [Fact]
-        public async Task Login_Post_ReturnsInternalServerError()
-        {
-            var auth = LoginFactory.CreateAuth("usertest", "test123");
-
-            var request = ServicesUtil.CreateRequestContent(auth);
-            var response = await testContext.Client.PostAsync(endpointLogin, request);
-
-            response.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
-
-            var message = ServicesUtil.ReadResponseMessage(response);
-            message.Should().Be(errorAccessDenied);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using ProcessoSeletivoTotvs.Application.Models.Usuarios;
+using ProcessoSeletivoTotvs.Domain.Entities;
+using ProcessoSeletivoTotvs.Domain.Enums.Perfil;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +23,11 @@ namespace ProcessoSeletivoTotvs.Api.Test.Factories
                     Nome = "Raphael Augusto Pereira de Assis",
                     Email = login,
                     Senha = "adminadmin",
-                    SenhaConfirmacao = "adminadmin"
+                    SenhaConfirmacao = "adminadmin",
+                    Perfis = new List<string>
+                    {
+                        Perfis.Administrador.ToString(),    
+                    }
                 };
 
                 return model;
@@ -37,11 +43,14 @@ namespace ProcessoSeletivoTotvs.Api.Test.Factories
                     Nome = string.Empty,
                     Email = string.Empty,
                     Senha = string.Empty,
-                    SenhaConfirmacao = string.Empty
+                    SenhaConfirmacao = string.Empty,
+                    Perfis = null
                 };
 
                 return model;
             }
         }
+
+        
     }
 }

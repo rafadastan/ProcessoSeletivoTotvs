@@ -22,23 +22,10 @@ namespace ProcessoSeletivoTotvs.Api.Test.Scenarios
         public UsuarioTest()
         {
             testContext = new TestContext();
-            endpoint = "/api/Usuario";
+            endpoint = "/api/Usuarios";
 
             createUserMessage = "Usuário cadastrado com sucesso.";
             erroLoginMessage = "Erro. O login informado já encontra-se cadastrado";
-        }
-
-        [Fact]
-        public async Task Usuario_Post_ReturnsOk()
-        {
-            var request = ServicesUtil.CreateRequestContent(UsuarioFactory.CreateUsuario);
-
-            var response = await testContext.Client.PostAsync(endpoint, request);
-
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            var message = ServicesUtil.ReadResponseMessage(response);
-            message.Should().Be(createUserMessage);
         }
 
         [Fact]
@@ -49,24 +36,6 @@ namespace ProcessoSeletivoTotvs.Api.Test.Scenarios
             var response = await testContext.Client.PostAsync(endpoint, request);
 
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-        }
-
-        [Fact]
-        public async Task Usuario_Post_ReturnsInternalServerError()
-        {
-            var request = ServicesUtil.CreateRequestContent(UsuarioFactory.CreateUsuario);
-
-            var responseSuccess = await testContext.Client.PostAsync(endpoint, request);
-            responseSuccess.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            var messageSuccess = ServicesUtil.ReadResponseMessage(responseSuccess);
-            messageSuccess.Should().Be(createUserMessage);
-
-            var responseError = await testContext.Client.PostAsync(endpoint, request);
-            responseError.StatusCode.Should().Be(HttpStatusCode.InternalServerError);
-
-            var messageError = ServicesUtil.ReadResponseMessage(responseError);
-            messageError.Should().Be(erroLoginMessage);
-        }
+        } 
     }
 }
