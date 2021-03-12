@@ -17,9 +17,13 @@ Desejável a utilização do padrão de projeto Domain-Driven-Design(DDD)
 * SOLID 
 * AutoMapper
 * JWT (Json Web Token)
-* EntityFramework Core / EntityFramework Core In-Memory
+* EntityFramework Core com PostgreSQL
+* Dapper Core com PostgreSQL
 * Swagger (Documentação da API)
+* Unit Of Work 
+* Design Patterns (Repository, Factory)
 
 # Bibliotecas Utilizadas
 
-- EntityFrameworkCore 3.1.9
+- EntityFrameworkCore 5.0.1
+- Npgsql.EntityFrameworkCore.PostgreSQL Version 5.0.1 
