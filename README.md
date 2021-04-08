@@ -1,9 +1,10 @@
-# ProcessoSeletivo Totvs
+# Processo Seletivo Totvs - Aprovado
+
 API para gerenciar Usuarios e Logins - Processo Seletivo vaga para Desenvolvedor
 
 # Processo seletivo para Totvs apresentação
-Criar uma api utilizando EntityFramework no modo In-Memory
-que permita ações de GET, POST, PUT, e DELETE para gerenciar 
+Criar uma api utilizando EntityFramework para persistência de dados e Dapper Consulta usando
+Postgree que permita ações de GET, POST, PUT, e DELETE para gerenciar 
 um cadastro de cliente.
 
 Desejável a utilização do padrão de projeto Domain-Driven-Design(DDD)
